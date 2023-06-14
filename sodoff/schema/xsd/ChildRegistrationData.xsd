@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:complexType name="ChildRegistrationData">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="0" name="MultiplayerEnabled" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="MultiplayerEnabled"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="isGenerateAvatar" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="isGenerateAvatar"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Locale" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Locale"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="Lock" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="isLocked"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Grade" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Grade"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="Age" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Age"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="BirthDate" type="xsd:dateTime">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="BirthDate"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ChildName" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="ChildName"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Gender" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Gender"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="GuestUserName" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="GuestUserName"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="IsGuest" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="IsGuest"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Password" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Password"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="IsSuggestAvatarName" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="IsSuggestAvatarName"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

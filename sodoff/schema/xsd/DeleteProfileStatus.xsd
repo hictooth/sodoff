@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:simpleType name="DeleteProfileStatus">
+        <xsi:annotation>
+            <xsi:appinfo>
+                <jaxb:typesafeEnumClass/>
+            </xsi:appinfo>
+        </xsi:annotation>
+        <xsi:restriction base="xsd:string">
+            <xsi:enumeration value="SUCCESS"/>
+            <xsi:enumeration value="ALREADY_DELETED"/>
+            <xsi:enumeration value="NOT_A_PROFILE_ACCOUNT"/>
+            <xsi:enumeration value="OWNER_ID_NOT_FOUND"/>
+            <xsi:enumeration value="PROFILE_NOT_OWNED_BY_THIS_OWNER"/>
+            <xsi:enumeration value="PROFILE_NOT_FOUND"/>
+            <xsi:enumeration value="PROFILE_CANNOT_BE_DELETED"/>
+            <xsi:enumeration value="IN_SUFFICIENT_VCASH_FUNDS"/>
+            <xsi:enumeration value="ERROR"/>
+        </xsi:restriction>
+    </xsi:simpleType>
+</xsi:schema>

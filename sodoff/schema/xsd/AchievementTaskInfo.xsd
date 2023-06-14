@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="AchievementReward.xsd"/>
+
+    <xsi:complexType name="AchievementTaskInfo">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="AchievementInfoID" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="AchievementTaskID" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="AchievementTaskGroupID" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="AchievementTaskGroupName" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Level" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="MessageID" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="PointValue" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Reproducible" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="AllowNonMembers" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Distinct" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ProductGroupID" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="TaskEvent_Points" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Cumulative" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="PreredeemMessageID" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ValidityFromDate" type="xsd:dateTime"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ValidityToDate" type="xsd:dateTime"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="VisibilityFromDate" type="xsd:dateTime"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="VisibilityToDate" type="xsd:dateTime"/>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="AchieventTaskReward" type="AchievementReward"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

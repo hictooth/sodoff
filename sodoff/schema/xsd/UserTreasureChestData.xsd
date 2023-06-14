@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="UserTreasureChestDataChest.xsd"/>
+
+    <xsi:complexType name="UserTreasureChestData">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="TreasureChestId" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="SceneName" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="GroupName" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Time" type="xsd:string"/>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="Chest" type="UserTreasureChestDataChest"/>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="mChestList" type="UserTreasureChestDataChest"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

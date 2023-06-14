@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:complexType name="Task">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="I" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="TaskID"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="N" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Name"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="S" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Static"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="C" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Completed"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="F" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Failed"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="P" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Payload"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

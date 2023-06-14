@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="ItemData.xsd"/>
+    <xsi:include schemaLocation="ItemStoreStat.xsd"/>
+
+    <xsi:complexType name="InventoryItemStatsMap">
+        <xsi:sequence>
+
+            <xsi:element maxOccurs="1" minOccurs="1" name="CID" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="CommonInventoryID"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+
+            <xsi:element maxOccurs="1" minOccurs="1" name="ITM" type="ItemData">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Item"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="ItemStoreStats" type="ItemStoreStat"/>
+
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

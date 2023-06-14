@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="BattleItemTierMap.xsd"/>
+
+    <xsi:complexType name="AddBattleItemsRequest">
+        <xsi:sequence>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="BITM" type="BattleItemTierMap">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="BattleItemTierMaps"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

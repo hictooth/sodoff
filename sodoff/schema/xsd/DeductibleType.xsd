@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="DeductibleType.xsd"/>
+
+    <xsi:simpleType name="DeductibleType">
+        <xsi:annotation>
+            <xsi:appinfo>
+                <jaxb:typesafeEnumClass/>
+            </xsi:appinfo>
+        </xsi:annotation>
+        <xsi:restriction base="xsd:string">
+            <xsi:enumeration value="Coins"/>
+            <xsi:enumeration value="VCash"/>
+            <xsi:enumeration value="Item"/>
+        </xsi:restriction>
+    </xsi:simpleType>
+</xsi:schema>

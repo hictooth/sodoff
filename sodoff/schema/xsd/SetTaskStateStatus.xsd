@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:simpleType name="SetTaskStateStatus">
+        <xsi:annotation>
+            <xsi:appinfo>
+                <jaxb:typesafeEnumClass/>
+            </xsi:appinfo>
+        </xsi:annotation>
+        <xsi:restriction base="xsd:int">
+            <xsi:enumeration value="1">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="RequiresMembership"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="2">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="RequiresAcceptance"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="3">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="NotWithinDateRange"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="4">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="PreRequisiteMissionIncomplete"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="5">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="UserRankLessThanMinRank"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="6">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="UserRankGreaterThanMaxRank"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="7">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="UserHasNoRankData"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="8">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="MissionStateNotFound"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="9">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="RequiredPriorTaskIncomplete"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="10">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="ParentsTaskIncomplete"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="11">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="ParentsSubMissionIncomplete"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="12">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="TaskCanBeDone"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="13">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="OneOrMoreMissionsHaveNoRewardsAttached"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="14">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="PayLoadUpdated"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="255">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="Unknown"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+        </xsi:restriction>
+    </xsi:simpleType>
+</xsi:schema>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:simpleType name="RaisedPetStage">
+        <xsi:annotation>
+            <xsi:appinfo>
+                <jaxb:typesafeEnumClass/>
+            </xsi:appinfo>
+        </xsi:annotation>
+        <xsi:restriction base="xsd:string">
+            <xsi:enumeration value="NONE">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="none"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="POWERUP">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="powerup"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="FIND">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="find"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="EGGINHAND">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="eggInHand"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="HATCHING">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="hatching"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="BABY">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="baby"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="CHILD">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="child"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="TEEN">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="teen"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="ADULT">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="adult"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="TITAN">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="titan"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+        </xsi:restriction>
+    </xsi:simpleType>
+</xsi:schema>

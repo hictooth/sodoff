@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="MultiplePrizeItemResponse.xsd"/>
+    <xsi:include schemaLocation="ValidationStatusResponse.xsd"/>
+    <xsi:include schemaLocation="UserGameCurrency.xsd"/>
+
+    <xsi:complexType name="CommonInventoryGroupResponse">
+        <xsi:sequence>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="pir" type="MultiplePrizeItemResponse">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="prizeItems"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="ValidationMessage" type="ValidationStatusResponse">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="validationResponse"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="s" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="success"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ugc" type="UserGameCurrency">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="userGameCurrency"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

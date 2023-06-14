@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:simpleType name="MailingResult">
+        <xsi:annotation>
+            <xsi:appinfo>
+                <jaxb:typesafeEnumClass/>
+            </xsi:appinfo>
+        </xsi:annotation>
+        <xsi:restriction base="xsd:string">
+            <xsi:enumeration value="Sent">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="Sent"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="InvalidEmailAddress">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidEmailAddress"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="CannotParseAuthorizationKey">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="CannotParseAuthorizationKey"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="SentNoReward">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="SentNoReward"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="GenericError">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="GenericError"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+        </xsi:restriction>
+    </xsi:simpleType>
+</xsi:schema>

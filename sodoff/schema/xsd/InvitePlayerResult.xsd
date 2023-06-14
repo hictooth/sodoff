@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="InvitePlayerStatus.xsd"/>
+    <xsi:include schemaLocation="InvitePlayerPlayerResult.xsd"/>
+
+    <xsi:complexType name="InvitePlayerResult">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Success" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="InviterStatus" type="InvitePlayerStatus"/>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="InviteeStatus" type="InvitePlayerPlayerResult"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

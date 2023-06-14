@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:simpleType name="Status">
+        <xsi:annotation>
+            <xsi:appinfo>
+                <jaxb:typesafeEnumClass/>
+            </xsi:appinfo>
+        </xsi:annotation>
+        <xsi:restriction base="xsd:int">
+            <xsi:enumeration value="1">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="Success"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="2">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="Failure"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="3">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="ItemNotFound"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="4">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="PoolItemsNotFound"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="5">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidItemMap"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="6">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="ItemNotFiltered"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="7">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidInput"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="8">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidGameMetaData"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="9">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidItemRarity"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="10">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="ItemStatsPersistFailed"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="11">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidItemPayout"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="12">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidStatsMap"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="13">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidPossibleStatsMap"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="14">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="ItemStatsNotExist"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="15">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="ItemsNotMapped"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="16">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="EventDataNotFound"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="17">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="MissionDataNotFound"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="18">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="SeasonRewardsNotFound"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="19">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="ItemNotFoundInInventory"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="20">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="BluePrintItemNotFound"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="21">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="LowDeductibleItemQuantity"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="22">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidBlueprintIngredients"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+        </xsi:restriction>
+    </xsi:simpleType>
+</xsi:schema>

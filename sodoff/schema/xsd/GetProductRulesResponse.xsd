@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:complexType name="getProductRulesResponse">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="0" name="globalKey" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:documentation>Is unused by the client (unless we were to specify rules, which we don't)</xsi:documentation>
+                    <xsi:appinfo>
+                        <jaxb:property name="GlobalSecretKey"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

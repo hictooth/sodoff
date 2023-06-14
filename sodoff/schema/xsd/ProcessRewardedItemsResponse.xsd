@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="CommonInventoryResponseRewardBinItem.xsd"/>
+    <xsi:include schemaLocation="CommonInventoryResponse.xsd"/>
+
+    <xsi:complexType name="ProcessRewardedItemsResponse">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="0" name="SII" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="SoldInventoryItems"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="SRBI" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="SoldRewardBinItems"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="CIRRBIS" type="CommonInventoryResponseRewardBinItem">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="MovedRewardBinItems"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="CIR" type="CommonInventoryResponse">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="CommonInventoryResponse"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:complexType name="Range">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="0" name="SD" type="xsd:dateTime">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="StartDate"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ED" type="xsd:dateTime">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="EndDate"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

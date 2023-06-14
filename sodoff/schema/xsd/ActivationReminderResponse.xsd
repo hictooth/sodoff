@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:simpleType name="ActivationReminderResponse">
+        <xsi:annotation>
+            <xsi:appinfo>
+                <jaxb:typesafeEnumClass/>
+            </xsi:appinfo>
+        </xsi:annotation>
+        <xsi:restriction base="xsd:int">
+            <xsi:enumeration value="1">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="ACTIVATION_REMINDER_SENT"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="2">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="ACCOUNT_ALREADY_ACTIVATED"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="3">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="ACCOUNT_DELETED"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="4">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="NOT_YET_TIME_TO_REMIND"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="5">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="ACCOUNT_ACTIVATION_DENIED"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="6">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="EMAIL_AUTHORIZATION_FAILED"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="7">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="EMAIL_NOT_MATCHED"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="8">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="SUPER_PARENT_CREATION_FAILED"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="255">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:typesafeEnumMember name="ERROR"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+        </xsi:restriction>
+    </xsi:simpleType>
+</xsi:schema>

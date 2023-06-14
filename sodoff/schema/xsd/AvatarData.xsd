@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="AvatarDataPart.xsd"/>
+    <xsi:include schemaLocation="Gender.xsd"/>
+    <xsi:include schemaLocation="AvatarPartVersionInfo.xsd"/>
+
+    <xsi:complexType name="AvatarData">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="0" name="IsSuggestedAvatarName" type="xsi:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="DisplayName" type="xsi:string"/>
+            <xsi:element maxOccurs="unbounded" minOccurs="1" name="Part" type="AvatarDataPart"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Gender" type="Gender"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="IsHatVisible" type="xsi:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="IsWingVisible" type="xsi:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="VersionInfo" type="AvatarPartVersionInfo"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="UDTTitle" type="xsi:string"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="LastEquippedFlightSuit" type="xsi:int"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

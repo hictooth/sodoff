@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="SetTaskStateStatus.xsd"/>
+    <xsi:include schemaLocation="MissionCompletedResult.xsd"/>
+    <xsi:include schemaLocation="CommonInventoryResponse.xsd"/>
+
+    <xsi:complexType name="SetTaskStateResult">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="S" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Success"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="T" type="SetTaskStateStatus">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Status"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="A" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="AdditionalStatusParams"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="R" type="MissionCompletedResult">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="MissionsCompleted"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="C" type="CommonInventoryResponse">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="CommonInvRes"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

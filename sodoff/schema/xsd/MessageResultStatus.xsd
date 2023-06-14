@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:simpleType name="MessageResultStatus">
+        <xsi:annotation>
+            <xsi:appinfo>
+                <jaxb:typesafeEnumClass/>
+            </xsi:appinfo>
+        </xsi:annotation>
+        <xsi:restriction base="xsd:string">
+            <xsi:enumeration value="PASSED"/>
+            <xsi:enumeration value="FAILED"/>
+            <xsi:enumeration value="BLOCKED"/>
+            <xsi:enumeration value="ChatBanned"/>
+            <xsi:enumeration value="ChatNotAllowed"/>
+            <xsi:enumeration value="NoPermission"/>
+        </xsi:restriction>
+    </xsi:simpleType>
+</xsi:schema>

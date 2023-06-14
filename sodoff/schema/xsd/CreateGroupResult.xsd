@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="CreateGroupStatus.xsd"/>
+    <xsi:include schemaLocation="Group.xsd"/>
+
+    <xsi:complexType name="CreateGroupResult">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Success" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Status" type="CreateGroupStatus"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Group" type="Group"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

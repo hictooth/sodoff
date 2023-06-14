@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+            xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="AchievementReward.xsd"/> <!-- TODO -->
+    <xsi:include schemaLocation="StateTransition.xsd"/>
+
+    <xsi:complexType name="ItemState">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ItemStateID" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Order" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="StateCompletionTransition" type="StateTransition"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="StateCompletionMinAge" type="xsi:int"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ConsumableItem" type="ItemStateConsumable"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="SpeedUpInfo" type="ItemStateSpeedUp"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ExpireInfo" type="ItemStateExpiryInfo"/>
+        </xsi:sequence>
+    </xsi:complexType>
+
+    <xsi:complexType name="ItemStateConsumable">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ConsumableItemID" type="xsi:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ConsumableItemAmount" type="xsi:int"/>
+        </xsi:sequence>
+    </xsi:complexType>
+
+    <xsi:complexType name="ItemStateSpeedUp">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="SpeedUpItemID" type="xsi:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="SpeedUpResultStateIndex" type="xsi:int"/>
+        </xsi:sequence>
+    </xsi:complexType>
+
+    <xsi:complexType name="ItemStateExpiryInfo">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ExpireDuration" type="xsi:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ExpiredStateIndex" type="xsi:int"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

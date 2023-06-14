@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS post;
+
+CREATE TABLE users (
+  id TEXT PRIMARY KEY,
+  email TEXT UNIQUE NOT NULL,
+  username TEXT UNIQUE NOT NULL,
+  password TEXT NOT NULL
+);
+
+CREATE TABLE sessions (
+  api_token TEXT PRIMARY KEY,
+  user_id TEXT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users (id)
+);

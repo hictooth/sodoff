@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="MessageBoardPostResult.xsd"/>
+    <xsi:include schemaLocation="MessageResultStatus.xsd"/>
+
+    <xsi:complexType name="RMFMessageBoardPostResult">
+        <xsi:complexContent>
+            <xsi:extension base="MessageBoardPostResult">
+                <xsi:sequence>
+                    <xsi:element maxOccurs="1" minOccurs="0" name="ResponseID" type="xsd:string"/>
+                    <xsi:element maxOccurs="1" minOccurs="1" name="MaxResult" type="xsd:int"/>
+                    <xsi:element maxOccurs="1" minOccurs="1" name="resultStatus" type="MessageResultStatus"/>
+                    <xsi:element maxOccurs="1" minOccurs="0" name="filteredMessage" type="xsd:string"/>
+                    <xsi:element maxOccurs="1" minOccurs="0" name="originalMessage" type="xsd:string"/>
+                </xsi:sequence>
+            </xsi:extension>
+        </xsi:complexContent>
+    </xsi:complexType>
+</xsi:schema>

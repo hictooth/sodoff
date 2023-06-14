@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="ItemPositionValidationResult.xsd"/>
+    <xsi:include schemaLocation="UserItemState.xsd"/>
+
+    <xsi:complexType name="UserItemPositionSetResponse">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="s" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Success"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="ids" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="CreatedUserItemPositionIDs"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="r" type="ItemPositionValidationResult">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Result"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="uciis" type="UserItemState">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="UserItemStates"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

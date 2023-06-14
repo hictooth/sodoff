@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="AvatarDisplayData.xsd"/>
+    <xsi:include schemaLocation="UserAnswerData.xsd"/>
+    <xsi:include schemaLocation="GameDataSummary.xsd"/>
+    <xsi:include schemaLocation="UserProfileGroupData.xsd"/>
+    <xsi:include schemaLocation="UserProfileTag.xsd"/>
+    <xsi:include schemaLocation="UserGrade.xsd"/>
+
+    <xsi:complexType name="UserProfileData">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ID" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Avatar" type="AvatarDisplayData">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="avatarInfo"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Ach" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="achievementCount"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Mth" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="mythieCount"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="Answer" type="UserAnswerData">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="answerData"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="gc" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="gameCurrency"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="cc" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="cashCurrency"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="Groups" type="UserProfileGroupData"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

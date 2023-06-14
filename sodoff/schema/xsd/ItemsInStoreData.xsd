@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="ItemData.xsd"/>
+    <xsi:include schemaLocation="ItemsInStoreDataSale.xsd"/>
+    <xsi:include schemaLocation="PopularStoreItem.xsd"/>
+
+    <xsi:complexType name="ItemsInStoreData">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="0" name="i" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="ID"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="is" type="ItemData">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Items"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="ss" type="ItemsInStoreDataSale">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="SalesAtStore"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="pitem" type="PopularStoreItem">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="PopularItems"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

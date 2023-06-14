@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="BluePrintDeductibleConfig.xsd"/>
+    <xsi:include schemaLocation="BluePrintSpecification.xsd"/>
+    <xsi:include schemaLocation="ItemTier.xsd"/>
+    <xsi:include schemaLocation="ItemRarity.xsd"/>
+
+    <xsi:complexType name="BluePrint">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="CoinCost" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ShardCost" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ResultItemID" type="xsi:int"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ResultItemTier" type="ItemTier"/>
+            <xsi:element maxOccurs="unbounded" minOccurs="1" name="ING" type="BluePrintSpecification">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="ingredients"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

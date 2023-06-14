@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="PrerequisiteItem.xsd"/>
+    <xsi:include schemaLocation="MissionCriteria.xsd"/>
+
+    <xsi:complexType name="MissionRule">
+        <xsi:sequence>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="Prerequisites" type="PrerequisiteItem"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Criteria" type="MissionCriteria"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

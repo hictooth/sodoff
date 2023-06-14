@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="DeductibleItemInventoryMap.xsd"/>
+    <xsi:include schemaLocation="BluePrintFuseItemMap.xsd"/>
+    <xsi:include schemaLocation="Gender.xsd"/>
+
+    <xsi:complexType name="FuseItemsRequest">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="0" name="BPINVID" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="BluePrintInventoryID"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="BPIID" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="BluePrintItemID"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="DIIM" type="DeductibleItemInventoryMap">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="DeductibleItemInventoryMaps"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="1" name="BPFIM" type="BluePrintFuseItemMap">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="BluePrintFuseItemMaps"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="LOC" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Locale"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="AGN" type="Gender">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="AvatarGender"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="GroupType.xsd"/>
+
+    <xsi:complexType name="GroupsFilter">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="0" name="Count" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="FromDate" type="xsd:dateTime"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ToDate" type="xsd:dateTime"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="Refresh" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="GroupType" type="GroupType"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Locale" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="PointTypeID" type="xsd:int"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

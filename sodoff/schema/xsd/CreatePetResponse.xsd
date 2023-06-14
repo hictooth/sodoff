@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="RaisedPetData.xsd"/>
+    <xsi:include schemaLocation="CommonInventoryResponse.xsd"/>
+
+    <xsi:complexType name="CreatePetResponse">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="rpd" type="RaisedPetData">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="RaisedPetData"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="cir" type="CommonInventoryResponse">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="UserCommonInventoryResponse"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

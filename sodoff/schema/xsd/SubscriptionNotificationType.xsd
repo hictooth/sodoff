@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:simpleType name="SubscriptionNotificationType">
+        <xsi:restriction base="xsd:string">
+            <xsi:enumeration value="NONE"/>
+            <xsi:enumeration value="SUBSCRIPTION_IN_GRACE_PERIOD"/>
+            <xsi:enumeration value="SUBSCRIPTION_EXPIRED"/>
+            <xsi:enumeration value="SUBSCRIPTION_ON_HOLD"/>
+            <xsi:enumeration value="SUBSCRIPTION_RECOVERED"/>
+            <xsi:enumeration value="SUBSCRIPTION_CANCELED"/>
+        </xsi:restriction>
+    </xsi:simpleType>
+</xsi:schema>

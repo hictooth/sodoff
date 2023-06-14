@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="LoginData.xsd"/>
+    <xsi:include schemaLocation="ExternalAuthProvider.xsd"/>
+    <xsi:include schemaLocation="UserPolicy.xsd"/>
+
+    <xsi:complexType name="ParentLoginData">
+        <xsi:complexContent>
+            <xsi:extension base="LoginData">
+                <xsi:sequence>
+                    <xsi:element maxOccurs="1" minOccurs="0" name="ChildUserID" type="xsd:string">
+                        <xsi:annotation>
+                            <xsi:documentation>Client parses this as a System.Guid</xsi:documentation>
+                            <xsi:appinfo>
+                                <jaxb:property name="ChildUserID"/>
+                            </xsi:appinfo>
+                        </xsi:annotation>
+                    </xsi:element>
+                    <xsi:element maxOccurs="1" minOccurs="0" name="FaceBookUserId" type="xsd:long">
+                        <xsi:annotation>
+                            <xsi:appinfo>
+                                <jaxb:property name="FaceBookUserId"/>
+                            </xsi:appinfo>
+                        </xsi:annotation>
+                    </xsi:element>
+                    <xsi:element maxOccurs="1" minOccurs="0" name="FacebookAccessToken" type="xsd:string">
+                        <xsi:annotation>
+                            <xsi:appinfo>
+                                <jaxb:property name="FacebookAccessToken"/>
+                            </xsi:appinfo>
+                        </xsi:annotation>
+                    </xsi:element>
+                    <xsi:element maxOccurs="1" minOccurs="0" name="LoginDuration" type="xsd:int">
+                        <xsi:annotation>
+                            <xsi:appinfo>
+                                <jaxb:property name="LoginDuration"/>
+                            </xsi:appinfo>
+                        </xsi:annotation>
+                    </xsi:element>
+                    <xsi:element maxOccurs="1" minOccurs="0" name="LoginHash" type="xsd:string">
+                        <xsi:annotation>
+                            <xsi:appinfo>
+                                <jaxb:property name="LoginHash"/>
+                            </xsi:appinfo>
+                        </xsi:annotation>
+                    </xsi:element>
+                    <xsi:element maxOccurs="1" minOccurs="0" name="ClientIP" type="xsd:string">
+                        <xsi:annotation>
+                            <xsi:appinfo>
+                                <jaxb:property name="ClientIP"/>
+                            </xsi:appinfo>
+                        </xsi:annotation>
+                    </xsi:element>
+                    <xsi:element maxOccurs="1" minOccurs="0" name="ExternalAuthProvider" type="ExternalAuthProvider">
+                        <xsi:annotation>
+                            <xsi:appinfo>
+                                <jaxb:property name="ExternalAuthProvider"/>
+                            </xsi:appinfo>
+                        </xsi:annotation>
+                    </xsi:element>
+                    <xsi:element maxOccurs="1" minOccurs="0" name="ExternalUserID" type="xsd:string">
+                        <xsi:annotation>
+                            <xsi:appinfo>
+                                <jaxb:property name="ExternalUserID"/>
+                            </xsi:appinfo>
+                        </xsi:annotation>
+                    </xsi:element>
+                    <xsi:element maxOccurs="1" minOccurs="0" name="ExternalAuthData" type="xsd:string">
+                        <xsi:annotation>
+                            <xsi:appinfo>
+                                <jaxb:property name="ExternalAuthData"/>
+                            </xsi:appinfo>
+                        </xsi:annotation>
+                    </xsi:element>
+                    <xsi:element maxOccurs="1" minOccurs="0" name="UserPolicy" type="UserPolicy">
+                        <xsi:annotation>
+                            <xsi:appinfo>
+                                <jaxb:property name="UserPolicy"/>
+                            </xsi:appinfo>
+                        </xsi:annotation>
+                    </xsi:element>
+                </xsi:sequence>
+            </xsi:extension>
+        </xsi:complexContent>
+    </xsi:complexType>
+</xsi:schema>

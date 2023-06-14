@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsd:include schemaLocation="AvatarData.xsd"/>
+    <xsd:include schemaLocation="UserInfo.xsd"/>
+    <xsd:include schemaLocation="UserSubscriptionInfo.xsd"/>
+    <xsd:include schemaLocation="UserAchievementInfo.xsd"/>
+
+    <xsi:complexType name="AvatarDisplayData">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="0" name="AvatarData" type="AvatarData"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="UserInfo" type="UserInfo"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="UserSubscriptionInfo" type="UserSubscriptionInfo"/>
+            <xsi:element maxOccurs="unbounded" minOccurs="1" name="Achievements" type="UserAchievementInfo"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:complexType name="MessageInfo">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="0" name="UserMessageQueueID" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:documentation>A unique ID to this message to reference it later</xsi:documentation>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="FromUserID" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="MessageID" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="MessageTypeID" type="xsd:int"/>
+            <!--<xsi:element maxOccurs="1" minOccurs="1" name="MessageTypeName" type="xsd:string"/>-->
+            <xsi:element maxOccurs="1" minOccurs="1" name="MemberMessage" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="NonMemberMessage" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="MemberImageUrl" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="NonMemberImageUrl" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="MemberLinkUrl" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="NonMemberLinkUrl" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="MemberAudioUrl" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="NonMemberAudioUrl" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Data" type="xsd:string"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="UserItemState.xsd"/>
+    <xsi:include schemaLocation="PairData.xsd"/>
+    <xsi:include schemaLocation="UserItemStat.xsd"/>
+    <xsi:include schemaLocation="ItemData.xsd"/>
+
+    <xsi:complexType name="UserItemPosition">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="0" name="iid" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="ItemID"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="uses" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Uses"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="invmdate" type="xsd:dateTime">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="InvLastModifiedDate"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="uis" type="UserItemState">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="UserItemState"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="uia" type="PairData">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="UserItemAttributes"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="uiss" type="UserItemStat">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="UserItemStat"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="id" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="UserItemPositionID"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="uicid" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="UserInventoryCommonID"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="i" type="ItemData">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="Item"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="px" type="xsd:double">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="PositionX"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="py" type="xsd:double">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="PositionY"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="pz" type="xsd:double">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="PositionZ"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="rx" type="xsd:double">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="RotationX"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ry" type="xsd:double">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="RotationY"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="rz" type="xsd:double">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="RotationZ"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="pid" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="ParentID"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

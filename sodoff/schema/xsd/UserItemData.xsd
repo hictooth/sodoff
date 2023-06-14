@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsi:include schemaLocation="PairData.xsd"/>
+    <xsi:include schemaLocation="ItemStat.xsd"/>
+    <xsi:include schemaLocation="ItemTier.xsd"/>
+    <xsi:include schemaLocation="ItemData.xsd"/>
+
+    <xsi:complexType name="UserItemData">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="iid" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="itemID"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="uia" type="PairData">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="userItemAttributes"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="ItemStoreStats" type="ItemStoreStat"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="IT" type="ItemTier">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="itemTier"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="uiid" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="userInventoryID"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="q" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="quantity"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="u" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="uses"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="i" type="ItemData">
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="item"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

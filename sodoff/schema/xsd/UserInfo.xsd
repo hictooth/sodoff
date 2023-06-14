@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
+
+    <xsd:include schemaLocation="Gender.xsd"/>
+
+    <xsi:complexType name="UserInfo">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="0" name="UserID" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ParentUserID" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Username" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="MultiplayerEnabled" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="BirthDate" type="xsd:dateTime"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="GenderID" type="Gender"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="Age" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="oce" type="xsd:boolean">
+                <!-- TODO this should be true by default, remove clientSide... -->
+                <xsi:annotation>
+                    <xsi:appinfo>
+                        <jaxb:property name="openChatEnabled"/>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="CreationDate" type="xsd:dateTime"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>
