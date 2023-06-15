@@ -22,10 +22,11 @@ def get_user_from_api_token(view):
     session = db.execute(
       'SELECT * FROM sessions WHERE api_token = ?', (api_token,)
     ).fetchone()
-    user_id = session['user_id']
 
     # retrieve user
+    g.user = None
     if session is not None:
+      user_id = session['user_id']
       user = db.execute(
         'SELECT * FROM users WHERE id = ?', (user_id,)
       ).fetchone()
@@ -135,3 +136,11 @@ def reset_password():
   # TODO: implement this
   # TODO: bug in generateDS breakes this xml, so just return string for not
   return '<?xml version="1.0" encoding="utf-8"?><MembershipUserStatus>Success</MembershipUserStatus>'
+
+@bp.route('/AuthenticationWebService.asmx/IsValidApiToken_V2', methods=['POST'])
+@sign_flask_response
+@get_user_from_api_token
+def is_valid_api_token():
+  if g.user is None:
+    return '<?xml version="1.0" encoding="utf-8"?><ApiTokenStatus>3</ApiTokenStatus>'
+  return '<?xml version="1.0" encoding="utf-8"?><ApiTokenStatus>1</ApiTokenStatus>'
