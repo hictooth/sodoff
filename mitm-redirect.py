@@ -3,7 +3,7 @@ import mitmproxy.http
 
 
 def routable(path):
-  methods = ['GetRules', 'LoginParent', 'RegisterParent', 'GetSubscriptionInfo', 'GetUserInfoByApiToken']
+  methods = ['GetRules', 'LoginParent', 'RegisterParent', 'GetSubscriptionInfo', 'GetUserInfoByApiToken', 'IsValidApiToken_V2']
   for method in methods:
     if method in path:
       return True
