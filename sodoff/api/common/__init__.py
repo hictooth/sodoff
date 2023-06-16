@@ -1,7 +1,5 @@
 from flask import Blueprint
 
-from .des import encrypt, decrypt, KEY, CODING
-
 from .authenticationwebservice import bp as authentication
 from .registrationwebservice import bp as registration
 from .membershipwebservice import bp as membership

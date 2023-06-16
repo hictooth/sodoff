@@ -1,11 +1,12 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, g
 from werkzeug.security import generate_password_hash
 from uuid import uuid4
 from html import escape
 
 from sodoff.util.xml import generate_ds_to_string
+from sodoff.api.common.authenticationwebservice import get_user_from_api_token
 from sodoff.api.common.des import encrypt_flask_response, decrypt_flask_request, sign_flask_response, ENCODING_WRAPPING_XML_STRING
-from sodoff.schema import ParentRegistrationData, RegistrationResult, ParentLoginInfo
+from sodoff.schema import ParentRegistrationData, RegistrationResult, ParentLoginInfo, ChildRegistrationData
 from sodoff.db import get_db
 
 bp = Blueprint('RegistrationWebService', __name__)
@@ -17,7 +18,6 @@ bp = Blueprint('RegistrationWebService', __name__)
 @encrypt_flask_response(ENCODING_WRAPPING_XML_STRING)
 def register_parent():
   parentRegistrationDataSerialised = request.form['parentRegistrationData']
-  print(parentRegistrationDataSerialised)
   parentRegistrationData = ParentRegistrationData.parseString(parentRegistrationDataSerialised.encode('utf-16'))
 
   # first parse out the parent data
@@ -47,7 +47,6 @@ def register_parent():
     )
     db.commit()
   except db.IntegrityError:
-    print('integrity!')
     response = RegistrationResult.RegistrationResult(
       Status=RegistrationResult.MembershipUserStatus.DUPLICATE_USER_NAME, # TODO: for now, do duplicate username even if its email
     )
@@ -68,5 +67,48 @@ def register_parent():
     UserID=id,
     Status=RegistrationResult.MembershipUserStatus.SUCCESS,
     ApiToken=str(uuid4()) # TODO: I don't think we use this anywhere, but check
+  )
+  return generate_ds_to_string(response)
+
+
+@bp.route('/V4/RegistrationWebService.asmx/RegisterChild', methods=['POST'])
+@sign_flask_response
+@decrypt_flask_request('childRegistrationData')
+@encrypt_flask_response(ENCODING_WRAPPING_XML_STRING)
+@get_user_from_api_token('parentApiToken')
+def register_child():
+  if not g.user:
+    response = RegistrationResult.RegistrationResult(
+      Status=RegistrationResult.MembershipUserStatus.INVALID_API_TOKEN,
+    )
+    return generate_ds_to_string(response)
+
+  childRegistrationDataSerialised = request.form['childRegistrationData']
+  childRegistrationData = ChildRegistrationData.parseString(childRegistrationDataSerialised.encode('utf-16'))
+  name = childRegistrationData.get_ChildName()
+
+  if not name:
+    response = RegistrationResult.RegistrationResult(
+      Status=RegistrationResult.MembershipUserStatus.VALIDATION_ERROR,
+    )
+    return generate_ds_to_string(response)
+  
+  try:
+    db = get_db()
+    id = str(uuid4())
+    db.execute(
+      "INSERT INTO vikings (id, name, user_id) VALUES (?, ?, ?)",
+      (id, name, g.user['id']),
+    )
+    db.commit()
+  except db.IntegrityError:
+    response = RegistrationResult.RegistrationResult(
+      Status=RegistrationResult.MembershipUserStatus.DUPLICATE_USER_NAME, # TODO: for now, do duplicate username even if its email
+    )
+    return generate_ds_to_string(response)
+  
+  response = RegistrationResult.RegistrationResult(
+    UserID=id,
+    Status=RegistrationResult.MembershipUserStatus.SUCCESS,
   )
   return generate_ds_to_string(response)

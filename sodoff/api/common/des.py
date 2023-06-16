@@ -94,8 +94,7 @@ def sign_flask_response(view):
 
 # TODO: this is a useful helper for decrypting strings easily
 if __name__ == '__main__':
-  rules = '''EV6xCtFqiuTAmQRvSlYaTsTyHQ+al47rqaMbZ5cr48dKCy9JH+BRuK4ILxEM3Us2KnfbL5uRCuSzDger5xNbEJ4CGc15qbTWiKvWEylCqacTnkkzPLANQB0kaDWfo3bXSoQTQCS+FpCLADzrpfGKtXoC7aGfAY/eFgo+ha/8mtboq0gLuZzM05QkAeo0BDz0OcJMk97+9Azs0WzEGxUwxugg64spl3uowDZRWmn4GLoEDzm73j12i49w7aGUO0FKx/cYtlaEoWj4sKqPBv
-f53mgZP4mHP8SRFIVVxfSQPWyB7tnlYFsLzt+seVVl4L+DZsK72NhscF9Y4B/YSDe9zayZbBxw4PgeFIVVxfSQPWwGQaRu9j9MShOeSTM8sA1AHSRoNZ+jdtdKhBNAJL4WkIsAPOul8Yq1ujlErEC5zl0=
+  rules = '''Jpy4JenMtueidT7niKPhCU868ovZ0Q+yOIQs2VtHE8KgeU1MTjNwO8lhh/oIeBXeezQVHrYFAIQZtlQVCKzqj4u2dExOx0pldzuhM9+s2KA=
 '''
   print(decrypt(rules.replace('\n', ''), KEY, CODING))
 

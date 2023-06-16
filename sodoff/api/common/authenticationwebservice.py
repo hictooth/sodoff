@@ -11,31 +11,38 @@ from sodoff.schema import GetProductRulesResponse, ParentLoginData, ParentLoginI
 bp = Blueprint('AuthenticationWebService', __name__)
 
 
-def get_user_from_api_token(view):
-  @wraps(view)
-  def wrapped_view(**kwargs):
-    # get the token
-    api_token = request.form['apiToken']
+def get_user_from_api_token(token_name):
+  def decorator(view):
+    @wraps(view)
+    def wrapped_view(**kwargs):
+      # get the token
+      api_token = request.form[token_name]
 
-    # get the session
-    db = get_db()
-    session = db.execute(
-      'SELECT * FROM sessions WHERE api_token = ?', (api_token,)
-    ).fetchone()
-
-    # retrieve user
-    g.user = None
-    if session is not None:
-      user_id = session['user_id']
-      user = db.execute(
-        'SELECT * FROM users WHERE id = ?', (user_id,)
+      # get the session
+      db = get_db()
+      session = db.execute(
+        'SELECT * FROM sessions WHERE api_token = ?', (api_token,)
       ).fetchone()
-      g.user = user
-    
-    # render as normal
-    return view(**kwargs)
 
-  return wrapped_view
+      # retrieve user
+      g.user = None
+      g.viking = None
+      if session is not None:
+
+        if session['type'] == 1: # a user
+          g.user = db.execute(
+            'SELECT * FROM users WHERE id = ?', (session['user_id'],)
+          ).fetchone()
+        
+        elif session['type'] == 2: # a viking
+          g.viking = db.execute(
+            'SELECT * FROM vikings WHERE id = ?', (session['user_id'],)
+          ).fetchone()
+      
+      # render as normal
+      return view(**kwargs)
+    return wrapped_view
+  return decorator
 
 
 @bp.route('/v3/AuthenticationWebService.asmx/GetRules', methods=['POST'])
@@ -86,7 +93,7 @@ def login_parent():
   # on success, setup session
   api_token = str(uuid4())
   db.execute(
-    "INSERT INTO sessions (api_token, user_id) VALUES (?, ?)",
+    "INSERT INTO sessions (api_token, user_id, type) VALUES (?, ?, 1)",
     (api_token, user['id']),
   )
   db.commit()
@@ -106,15 +113,27 @@ def login_parent():
 
 @bp.route('/AuthenticationWebService.asmx/GetUserInfoByApiToken', methods=['POST'])
 @sign_flask_response
-@get_user_from_api_token
+@get_user_from_api_token('apiToken')
 def get_user_info_by_api_token():
-  response = UserInfo.UserInfo(
-    UserID=g.user['id'],
-    Username=g.user['username'],
-    MultiplayerEnabled="true",
-    Age=24,
-    oce="true",
-  )
+  if g.user:
+    response = UserInfo.UserInfo(
+      UserID=g.user['id'],
+      Username=g.user['username'],
+      MultiplayerEnabled="true",
+      Age=24,
+      oce="true",
+    )
+  elif g.viking:
+    response = UserInfo.UserInfo(
+      UserID=g.viking['id'],
+      Username=g.viking['name'],
+      MultiplayerEnabled="true",
+      Age=24,
+      oce="true",
+    )
+  else:
+    # TODO: error response
+    return ''
   res = generate_ds_to_string(response, add_xmlns=True)
   return res
 
@@ -137,10 +156,35 @@ def reset_password():
   # TODO: bug in generateDS breakes this xml, so just return string for not
   return '<?xml version="1.0" encoding="utf-8"?><MembershipUserStatus>Success</MembershipUserStatus>'
 
+
 @bp.route('/AuthenticationWebService.asmx/IsValidApiToken_V2', methods=['POST'])
 @sign_flask_response
-@get_user_from_api_token
+@get_user_from_api_token('apiToken')
 def is_valid_api_token():
-  if g.user is None:
+  if g.user is None and g.viking is None:
     return '<?xml version="1.0" encoding="utf-8"?><ApiTokenStatus>3</ApiTokenStatus>'
   return '<?xml version="1.0" encoding="utf-8"?><ApiTokenStatus>1</ApiTokenStatus>'
+
+
+@bp.route('/AuthenticationWebService.asmx/LoginChild', methods=['POST'])
+@sign_flask_response
+@decrypt_flask_request('childUserID')
+@encrypt_flask_response(ENCODING_WRAPPING_XML_STRING)
+@get_user_from_api_token('parentApiToken')
+def login_child():
+  if g.user is None:
+    # TODO: response for bad
+    return ''
+
+  childUserIDSerialised = request.form['childUserID']
+
+  # on success, setup session
+  api_token = str(uuid4())
+  db = get_db()
+  db.execute(
+    "INSERT INTO sessions (api_token, user_id, type) VALUES (?, ?, 2)",
+    (api_token, childUserIDSerialised),
+  )
+  db.commit()
+
+  return api_token

@@ -42,6 +42,22 @@ You can check if it is running by going to http://127.0.0.1:5000/health-check
 - Registration
 - Login
 
+### Methods
+
+- GetRules
+- LoginParent
+- GetUserInfoByApiToken
+- \*RecoverAccount
+- \*ResetPassword
+- IsValidApiToken_V2
+- LoginChild
+- GetSubscriptionInfo
+- RegisterParent
+- RegisterChild
+- GetDefaultNameSuggestion
+- ValidateName
+- GetUserProfileByUserID
+
 ### What doesn't
 
 Everything else
